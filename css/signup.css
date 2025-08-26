@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.signup-box {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Prevent it from getting too tall */
+    position: relative;
+}
+
+.signup-box h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.signup-form {
+    flex-grow: 1; /* Allow the form to take up remaining space */
+    overflow-y: auto;
+    padding-right: 10px;
+    max-height: calc(80vh - 80px); /* Prevents overflowing */
+}
+
+.signup-form::-webkit-scrollbar {
+    display: none;
+}
+
+.form-control, .form-select {
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.error {
+    color: #ce1126;
+    font-size: 0.875rem;
+    min-height: 20px;
+    display: block;
+}
+
+.btn-danger {
+    background-color: #ce1126;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #007a3d;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        max-width: 90%;
+        padding: 30px;
+    }
+}

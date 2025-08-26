@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e6dfdf;
+}
+
+/* Footer Styles (Scoped to Footer Only) */
+footer {
+  font-family: 'Noto Naskh Arabic', serif;
+  background: #000000;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer .footer-content {
+  font-family: 'Noto Naskh Arabic', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+/* Footer Upper Left Section */
+footer .footer-upper-left {
+  font-family: 'Noto Naskh Arabic', serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+footer .logo-text p {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 2px 0;
+}
+
+footer .logo-text p strong {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 1.1rem;
+}
+
+/* Horizontal Line (Divider) */
+footer .footer-divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 10px 0;
+}
+
+/* Footer Middle Section */
+footer .footer-middle {
+  font-family: 'Noto Naskh Arabic', serif;
+  text-align: center;
+  margin: 0 auto 10px;
+  width: 100%;
+}
+
+footer .socials {
+  font-family: 'Noto Naskh Arabic', serif;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+footer .socials a {
+  font-family: 'Noto Naskh Arabic', serif;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+footer .socials a i {
+  font-size: 1.2rem;
+}
+
+footer .socials a p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer .socials a:hover {
+  color: #ccc;
+}
+
+footer .contact-info p {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 3px 0;
+  font-size: 0.9rem;
+}
+
+/* Footer Lower Right Section */
+footer .footer-lower-right {
+  font-family: 'Noto Naskh Arabic', serif;
+  text-align: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+footer .footer-lower-right p {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  footer .footer-content {
+    align-items: center;
+  }
+
+  footer .footer-upper-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .footer-lower-right {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .footer-content {
+    padding: 0 5px;
+  }
+
+  footer .socials a {
+    font-size: 1rem;
+  }
+
+  footer .contact-info p {
+    font-size: 0.8rem;
+  }
+
+  footer .footer-lower-right p {
+    font-size: 0.8rem;
+  }
+}

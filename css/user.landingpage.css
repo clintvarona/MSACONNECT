@@ -1,0 +1,388 @@
+/* General Styles */
+html, body {
+  background-color: #e6dfdf;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Naskh Arabic', serif;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Remove conflicting header styles */
+/* Ensure header stays sticky - REMOVED TO PREVENT CONFLICTS */
+
+/* Content Wrapper */
+.content {
+  font-family: 'Noto Naskh Arabic', serif;
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Carousel Styles */ 
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #e6dfdf;
+  overflow: hidden;
+  background-image: url('../assets/images/background.jpg');
+  z-index: 1; /* Keep this low to not interfere with the header */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Prevent interaction with hidden slides */
+  z-index: 1;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto; /* Re-enable interaction for active slide */
+  z-index: 2;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  max-width: 800px;
+  width: 90%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.hero-content h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 20px;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.hero-content p {
+  font-size: var(--font-size-base);
+  margin-bottom: 30px;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  z-index: 4;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Latest Updates Section */
+.latest-updates {
+  padding: 40px 20px;
+  background-color: #e6dfdf;
+  text-align: center;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.latest-updates h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 20px;
+  color: #1a541c;
+  font-weight: bold;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.updates-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Ensure links are clickable */
+.update-link {
+  display: block;
+  width: calc(25% - 20px);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 5;
+}
+
+.update-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  font-family: 'Noto Naskh Arabic', serif;
+  height: auto; /* Allow height to adjust to content */
+  min-height: 380px; /* Minimum height */
+  max-height: 480px; /* Maximum height */
+  display: flex;
+  flex-direction: column;
+}
+
+.update-item img {
+  width: 100%;
+  height: 180px; /* Slightly reduced image height */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.update-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  justify-content: flex-start; /* Align content to top */
+  gap: 8px; /* Add spacing between elements */
+}
+
+.update-date {
+  font-size: var(--font-size-sm);
+  color: #888;
+  margin-bottom: 0;
+  font-family: 'Noto Naskh Arabic', serif;
+  flex-shrink: 0;
+}
+
+.update-title {
+  font-size: var(--font-size-md);
+  color: #333;
+  font-family: 'Noto Naskh Arabic', serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.update-content {
+  font-size: var(--font-size-sm);
+  color: #555;
+  font-family: 'Noto Naskh Arabic', serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* Allow more lines */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.5;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-height: 9em; /* Maximum height for content */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .update-link {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 350px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .update-link {
+    width: calc(50% - 20px);
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 300px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .update-link {
+    width: 100%;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .prayer-schedule table {
+    min-width: 300px; /* Allow some min-width for usability */
+  }
+
+  .volunteer h2 {
+    font-size: 1.6rem;
+  }
+
+  .volunteer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Prayer Schedule Section - LEGACY STYLES - REPLACED BY SHARED-TABLES.CSS */
+.prayer-schedule {
+  text-align: center;
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.prayer-schedule h2 {
+  color: #1a541c;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+/* The table-specific styles below are now replaced by shared-tables.css */
+/* These styles are kept for backwards compatibility only */
+/* Please use the .msa-table class for new tables */
+
+/* Volunteer Section */
+.volunteer {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.volunteer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.volunteer h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a541c;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.volunteer p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333333;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.volunteer .cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #9f2626;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+/* Additional Table Section Overrides */
+#prayer-schedule.table-section .container,
+.table-section .container {
+  max-width: 1140px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* For small screens, allow horizontal scrolling */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .msa-table {
+    min-width: 768px;
+  }
+}

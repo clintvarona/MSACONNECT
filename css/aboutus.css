@@ -1,0 +1,1007 @@
+/* Add this at the TOP of your CSS file */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* HEADER STYLING REMOVED TO PREVENT CONFLICTS WITH SITE-WIDE STYLES */
+
+.hero-content,
+.about-section,
+.mission, 
+.vision,
+.mission p, 
+.vision p,
+.org-chart,
+.org-node,
+.org-name,
+.org-position,
+.downloads-section,
+.file-item,
+.file-details h3,
+.file-details p,
+.download-link,
+.content p, 
+.content span, 
+.content li {
+  font-family: 'Noto Naskh Arabic', serif !important;
+}
+
+body {
+  font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  margin-top: 0 !important; /* Ensure no top margin */
+  padding-top: 0 !important; /* Ensure no padding that might push content down */
+}
+
+/* Wrapper for Content and Footer */
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0 !important; /* Ensure no top margin */
+}
+
+/* Content Wrapper */
+.content {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Container width fix */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Updated Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-top: 0; /* JS will handle this dynamically */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Place below content */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensure content appears above background */
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  width: 90%;
+}
+
+/* Mission and Vision Sections */
+.about-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.mission-vision {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-section .mission, 
+.about-section .vision {
+  width: 100%;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 25px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+}
+
+.about-section .mission h3,
+.about-section .vision h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 15px;
+  color: #1a541c;
+}
+
+.about-section .mission p,
+.about-section .vision p {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* Executive Officers Section - Glassmorphism Design */
+.executive-officers {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Background design elements - ensure they don't cause overflow */
+.executive-officers::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    top: -80px;
+    right: -80px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.executive-officers::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    bottom: -50px;
+    left: -50px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.executive-officers h2 {
+    font-size: var(--font-size-4xl);
+    color: #1a541c;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.executive-officers h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Adviser container styles */
+.adviser-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adviser-container .officer-card {
+    width: 300px;
+    max-width: 100%;
+    flex: 0 0 auto;
+    margin: 0 1rem;
+}
+
+/* Officer tabs styles */
+.officer-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: 'Noto Naskh Arabic', serif;
+    color: #333;
+}
+
+.tab-button.active {
+    background-color: #1a541c;
+    color: white;
+}
+
+.tab-button:hover {
+    background-color: #e5e5e5;
+}
+
+.tab-button.active:hover {
+    background-color: #134015;
+}
+
+/* Branch container styles */
+.officer-branch-container {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.officer-branch-container.active {
+    display: block;
+}
+
+.officers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: start;
+}
+
+/* Ensure 3 columns for larger screens */
+@media (min-width: 992px) {
+    .officers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Loading indicator styling */
+.officers-grid[data-loading="true"] .officer-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.officers-grid[data-loading="true"] .officer-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading-shimmer 1.5s infinite;
+    z-index: 5;
+}
+
+@keyframes loading-shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Officer cards - add align-self to prevent stretching */
+.officer-card {
+    position: relative;
+    height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    align-self: start;
+}
+
+.officer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.blur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.officer-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 2rem auto 1.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.officer-card:hover .officer-image {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.officer-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #333333;
+    margin: 0.5rem 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.officer-position {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.officer-bio {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+/* Volunteer Section */
+.volunteer {
+    background-color: #f9f9f9;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.volunteer-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.volunteer-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Volunteer Button */
+.volunteer-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #dc2626;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.volunteer-button:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Section Title Style */
+.section-title {
+    font-size: 1.8rem;
+    color: #1a541c;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+/* Downloadable Files Section */
+.downloadable-files {
+    padding: 40px 0;
+    background-color: #f5f8f5;
+}
+
+.downloadable-files h2 {
+    font-size: 1.8rem;
+    color: #1a541c;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.downloadable-files .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.downloads-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.download-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #1a541c;
+}
+
+.download-icon {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.download-icon.docx {
+    background-color: #e9f0ff;
+}
+
+.download-icon.docx::before {
+    content: "DOC";
+}
+
+.download-icon.pdf {
+    background-color: #ffe9e9;
+}
+
+.download-icon.pdf::before {
+    content: "PDF";
+}
+
+.download-icon.xlsx {
+    background-color: #e9ffef;
+}
+
+.download-icon.xlsx::before {
+    content: "XLS";
+}
+
+.download-icon.pptx {
+    background-color: #fff6e9;
+}
+
+.download-icon.pptx::before {
+    content: "PPT";
+}
+
+.download-icon.txt {
+    background-color: #f5f5f5;
+}
+
+.download-icon.txt::before {
+    content: "TXT";
+}
+
+.download-icon.zip {
+    background-color: #f0e9ff;
+}
+
+.download-icon.zip::before {
+    content: "ZIP";
+}
+
+.download-icon.file {
+    background-color: #f5f5f5;
+}
+
+.download-icon.file::before {
+    content: "FILE";
+}
+
+.download-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; /* Allows text to truncate properly */
+}
+
+.download-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.download-type {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.download-size {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.download-date {
+    color: #888;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.no-downloads {
+    color: #666;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    border: 1px dashed #ddd;
+    margin: 1rem 0;
+}
+
+/* Improved Media Queries */
+@media (max-width: 1024px) {
+  #executive-officers-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0.5rem;
+  }
+  
+  .downloads-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 320px;
+    margin-top: 120px; /* Slightly reduce top margin on mobile */
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .about-section .mission, 
+  .about-section .vision {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    box-sizing: border-box;
+  }
+
+  .about-section .mission h3, 
+  .about-section .vision h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-section .mission p, 
+  .about-section .vision p {
+    font-size: 0.95rem;
+  }
+
+  .executive-officers {
+    padding: 2.5rem 0.5rem;
+  }
+
+  .executive-officers h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  #executive-officers-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .officer-card {
+    height: 350px;
+  }
+  
+  .officer-image {
+    width: 110px;
+    height: 110px;
+    margin: 1.5rem auto 1rem;
+  }
+  
+  .officer-name {
+    font-size: 1.2rem;
+  }
+  
+  .officer-position {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .officer-bio {
+    font-size: 0.85rem;
+  }
+
+  .downloadable-files h2 {
+    font-size: 1.8rem;
+  }
+  
+  .downloads-list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .adviser-container {
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .adviser-container .officer-card {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    min-height: 280px;
+    margin-top: 100px; /* Further reduce top margin on smaller screens */
+  }
+  
+  .hero-content {
+    width: 95%;
+    padding: 12px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .executive-officers h2 {
+    font-size: 1.5rem;
+  }
+
+  #executive-officers-container {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .officer-card {
+    height: 330px;
+  }
+
+  .officer-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .downloads-list {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .download-card {
+    padding: 12px;
+  }
+
+  .adviser-container {
+    gap: 2rem;
+  }
+  
+  .adviser-container .officer-card {
+    width: 250px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 240px;
+    margin-top: 90px; /* Minimal top margin on very small screens */
+  }
+  
+  .hero-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .about-section .mission, 
+  .about-section .vision {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .about-section .mission h3,
+  .about-section .vision h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-section .mission p,
+  .about-section .vision p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .executive-officers {
+    padding: 2rem 0.25rem;
+  }
+  
+  .executive-officers h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #executive-officers-container {
+    max-width: 280px;
+  }
+  
+  .officer-card {
+    height: 300px;
+  }
+  
+  .officer-name {
+    font-size: 1.1rem;
+  }
+  
+  .officer-position {
+    font-size: 0.8rem;
+  }
+  
+  .officer-bio {
+    font-size: 0.8rem;
+    padding: 0 1rem;
+  }
+  
+  .downloadable-files {
+    padding: 2rem 0;
+  }
+  
+  .downloadable-files h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .downloads-list {
+    max-width: 280px;
+  }
+  
+  .download-info {
+    font-size: 0.9rem;
+  }
+  
+  .download-title {
+    font-size: 0.9rem;
+  }
+  
+  .download-type, 
+  .download-size {
+    font-size: 0.75rem;
+  }
+  
+  .download-date {
+    font-size: 0.7rem;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .hero-content {
+    width: 98%;
+    padding: 10px;
+  }
+  
+  #executive-officers-container,
+  .downloads-list {
+    max-width: 260px;
+    margin: 0 auto;
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+  
+  .downloads-list {
+    margin-top: 1rem;
+  }
+  
+  .officer-card {
+    height: 280px;
+  }
+  
+  .officer-image {
+    width: 90px;
+    height: 90px;
+    margin: 1rem auto 0.8rem;
+  }
+  
+  .download-card {
+    padding: 10px;
+  }
+  
+  .download-icon {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}
+
+/* Fix for touch devices */
+@media (hover: none) {
+  .officer-card:hover {
+    transform: none;
+  }
+  
+  .officer-card:hover .officer-image {
+    transform: none;
+  }
+  
+  .download-card:hover {
+    transform: none;
+  }
+}
+
+.view-more-container {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.view-more-container.hidden {
+  display: none !important;
+}
+
+.view-more-btn {
+  background-color: #1a541c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Noto Naskh Arabic', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.view-more-btn:hover {
+  background-color: #134016;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.view-more-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Text-only cards - set specific fixed height */
+.text-only-card {
+    padding-top: 25px;
+    height: auto;
+    min-height: 200px;
+    max-height: 250px;
+}
+
+.text-only-card .officer-name {
+    margin-top: 20px;
+    font-size: 1.6rem;
+}
+
+.text-only-card .officer-position {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #1a541c;
+    font-weight: 500;
+}
+
+.text-only-card .officer-bio {
+    margin-top: 15px;
+    padding: 0 20px;
+    font-size: 0.95rem;
+}

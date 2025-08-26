@@ -1,0 +1,219 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Content Wrapper */
+.content {
+  font-family: 'Noto Naskh Arabic', serif;
+  flex: 1;
+  padding: 20px;
+}
+
+/* Updated Hero Section to match Calendar page */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.hero h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.hero a {
+  font-family: 'Noto Naskh Arabic', serif;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.hero a:hover {
+  color: #f0f0f0;
+}
+
+/* FAQs Content */
+.faqs-content {
+  font-family: 'Noto Naskh Arabic', serif;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.faqs-content h3 {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1a541c;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px 0;
+}
+
+/* FAQ Item Styling - KEEPING THESE ANIMATIONS */
+.faq-item {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.faq-question .arrow {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: #9f2626;
+}
+
+.faq-question.open .arrow {
+  transform: rotate(180deg);
+  color: #9f2626;
+}
+
+.faq-answer {
+  font-family: 'Noto Naskh Arabic', serif;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  padding: 10px;
+}
+
+.faq-answer a {
+  font-family: 'Noto Naskh Arabic', serif;
+  color: #1a541c;
+  text-decoration: underline;
+}
+
+.faq-answer a:hover {
+  color: #134015;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+  }
+  
+  .hero-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+  
+  .faqs-content {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 300px;
+  }
+  
+  .hero-content {
+    max-width: 95%;
+    padding: 10px;
+  }
+  
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .faqs-content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}

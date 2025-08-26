@@ -1,0 +1,390 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Naskh Arabic', serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.content {
+  font-family: 'Noto Naskh Arabic', serif;
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  font-family: 'Noto Naskh Arabic', serif;
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-button {
+  font-family: 'Noto Naskh Arabic', serif;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero {
+  font-family: 'Noto Naskh Arabic', serif;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.hero-content {
+  font-family: 'Noto Naskh Arabic', serif;
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.volunteer-button-container {
+  font-family: 'Noto Naskh Arabic', serif;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.volunteer-button {
+  font-family: 'Noto Naskh Arabic', serif;
+  background-color: #9f2626;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.volunteer-button:hover {
+  background-color: #7e1e1e;
+}
+
+.volunteer-section {
+  font-family: 'Noto Naskh Arabic', serif;
+  width: 100%;
+  max-width: 1400px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 50px;
+  background-color: #f5f8f5;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  min-height: 400px;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.volunteer-section h3 {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #1a541c;
+  position: relative;
+  display: inline-block;
+}
+
+.volunteer-section h2 {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #1a541c;
+  position: relative;
+  display: inline-block;
+}
+
+.section-description {
+  font-size: var(--font-size-base);
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.volunteer-counter {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+  background-color: #fff;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#volunteer-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #9f2626;
+}
+
+.volunteer-grid {
+  font-family: 'Noto Naskh Arabic', serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  margin: 10px 0 40px;
+}
+
+.volunteer {
+  font-family: 'Noto Naskh Arabic', serif;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c5d6c6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 60px;
+}
+
+.volunteer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border-color: #1a541c;
+}
+
+.volunteer .name {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.join-volunteer-cta {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e6efe7;
+  border-radius: 10px;
+  border-left: 4px solid #1a541c;
+}
+
+.join-volunteer-cta p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.join-volunteer-cta .volunteer-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  background-color: #1a541c;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(26, 84, 28, 0.3);
+}
+
+.join-volunteer-cta .volunteer-button:hover {
+  background-color: #133b14;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(26, 84, 28, 0.4);
+}
+
+@media (max-width: 768px) {
+  .volunteer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .volunteer-section {
+    width: 95%;
+    padding: 20px 15px;
+  }
+  
+  .section-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .volunteer-section h3 {
+    font-size: 24px;
+  }
+  
+  .section-description {
+    font-size: 15px;
+  }
+}
+
+/* Add two-column form support if needed for modal or other forms */
+.form-columns {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-col {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* COR upload always full width, not affected by columns */
+.cor-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.upload-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+  .form-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+  .form-col {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .cor-row {
+    align-items: stretch;
+  }
+}
+
+.hero h2 {
+  font-size: var(--font-size-xl);
+}
+
+.volunteer-card h3 {
+  font-size: var(--font-size-base);
+}
+
+.volunteer-banner h2 {
+  font-size: var(--font-size-4xl);
+}
+
+.volunteer-banner p {
+  font-size: var(--font-size-md);
+}
+
+.volunteer-options h3 {
+  font-size: var(--font-size-md);
+}
+
+.volunteer-section-title {
+  font-size: var(--font-size-xl);
+}
+
+.category-description {
+  font-size: var(--font-size-base);
+}
+
+.committee-heading {
+  font-size: var(--font-size-md);
+}
+
+.committee-description {
+  font-size: var(--font-size-base);
+}
+
+.section-heading {
+  font-size: var(--font-size-xl);
+}
+
+.testimonial-text {
+  font-size: var(--font-size-base);
+}
